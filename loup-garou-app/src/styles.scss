@@ -2,3 +2,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Doktor';
+    src: url('assets/fonts/doktor.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;800;900&display=swap');
+
+$dark-bg: #011C27;
+$dark-1: #0E223A;
+$primary: #D90429;
+$white: #F5F0F6;
+$black: #000000;
+$dark-2: #03254E;
+
+$font-title: 'Doktor', sans-serif;
+$font-body: 'Inter', sans-serif;
+
+html, body {
+  font-family: $font-body;
+  margin: 0;
+  padding: 0;
+}
