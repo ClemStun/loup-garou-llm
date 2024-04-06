@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./nouvelle-partie.component.scss']
 })
 export class NouvellePartieComponent {
-
+  pseudo = "Louis";
+  imgSrc = "../../../../assets/images/bg.png";
 }
