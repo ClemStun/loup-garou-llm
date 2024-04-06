@@ -23,6 +23,12 @@ $font-body: 'Inter', sans-serif;
 
 html, body {
   font-family: $font-body;
+  background-color: $dark-bg;
+  background-image: url('assets/images/bg.png');
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
   margin: 0;
   padding: 0;
 }
