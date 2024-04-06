@@ -1,0 +1,25 @@
+<div class="w-full flex justify-center">
+    <div *ngIf="value > 0 || label != ''" class="flex rounded-full w-24 h-8 border-2 border-primary">
+        <button *ngIf="label == ''" class="rounded-s-full bg-primary text-dark-1 text-center font-bold text-3xl"
+            (click)="reduceValue()">
+            -
+        </button>
+        <input
+            type="text"
+            class="w-full h-full text-center text-white" [ngClass]="{'bg-primary': isAlternative, 'bg-dark-1 font-bold': !isAlternative, 'rounded-full': !!label}"
+            [value]="label == '' ? value : label"
+            [disabled]="label != ''"
+        />
+        <button *ngIf="label == ''" class="rounded-e-full bg-primary text-dark-1 text-center font-bold text-3xl"
+            (click)="addValue()">
+            +
+        </button>
+    </div>
+    
+    <div *ngIf="value == 0 && label == ''" class="h-8">
+        <button class="rounded-full w-9 p-0 m-0 bg-primary text-dark-1 text-center font-bold text-3xl"
+            (click)="addValue()">
+            +
+        </button>
+    </div>
+</div>

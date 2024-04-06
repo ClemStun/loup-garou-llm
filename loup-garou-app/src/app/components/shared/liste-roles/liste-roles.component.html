@@ -1,1 +1,6 @@
-<p>liste-roles works!</p>
+<div class="flex flex-col gap-4 items-center justify-center">
+    <h2 class="font-semibold text-lg" [innerHTML]="title"></h2>
+    <div class="grid gap-x-7 gap-y-12 justify-items-end" [ngClass]="{'grid-cols-3': !moreColumns, 'grid-cols-5': moreColumns}">
+        <app-carte-role *ngFor="let role of roles" [role]="role"></app-carte-role>
+    </div>
+</div>
