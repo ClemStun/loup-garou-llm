@@ -1,0 +1,18 @@
+.circle-container {
+    width: 500px; /* Changer la largeur selon vos besoins */
+    height: 500px; /* Changer la hauteur selon vos besoins */
+    border: 2px solid black;
+    border-radius: 50%; /* Pour faire une div en forme de cercle */
+    position: relative;
+}
+.player {
+    position: absolute;
+    width: 50px; /* Changer la taille des joueurs selon vos besoins */
+    height: 50px; /* Changer la taille des joueurs selon vos besoins */
+    background-color: blue; /* Changer la couleur des joueurs selon vos besoins */
+    border-radius: 50%; /* Pour faire des joueurs en forme de cercle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
