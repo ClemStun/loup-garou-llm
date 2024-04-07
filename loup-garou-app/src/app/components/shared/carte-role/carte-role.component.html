@@ -1,1 +1,7 @@
-<p>carte-role works!</p>
+<div class="w-32 relative">
+    <fa-icon [icon]="faCircleInfo" class="fa-xl absolute"></fa-icon>
+    <div class="w-32 h-32 overflow-hidden rounded-full border-2 border-primary">
+        <img [src]="role.imgSrc" alt="role.name">
+    </div>
+    <app-input-number [value]="value" [label]="label" [isAlternative]="isAlternative" [isEditable]="isEditable" (valueEmitter)="getValue($event)" class="absolute"></app-input-number>
+</div>

@@ -1,1 +1,23 @@
-<p>chat-input works!</p>
+<!-- type = 1 -> tour des loup graou
+type = 2 -> les vilageois doivent éliminier quelqu'un -->
+
+<div class="w-full flex items-center justify-center h-14">
+    <span class="w-full" [ngSwitch]="type">
+    <div class="flex w-full" *ngSwitchCase=1>
+        <div class="bg-dark-1 p-6 w-full rounded-l-2xl text-white h-full text-center">
+            Au tour des <span class="text-primary">Loups-Garous</span> de jouer.
+        </div>
+    </div>
+    <div class="flex w-full" *ngSwitchCase=2>
+        <div class="bg-dark-1 p-6 w-full rounded-l-2xl h-full text-white text-center">
+            <span class="color">Le Village</span> doit voter pour éliminer quelqu'un.
+        </div>
+    </div>
+    <div class="flex w-full" *ngSwitchDefault>
+        <input class="bg-dark-1 p-6 w-full rounded-l-2xl h-full" type="text" [placeholder]="placeholder" (input)="onInputChange($event)">
+        <div (click)="sendMessage()" class=" p-6 hover:opacity-65 cursor-pointer h-full rounded-r-2xl bg-primary w-1/12 flex justify-center items-center">
+            <fa-icon [icon]="send" class="fa-xl"></fa-icon>
+        </div>
+    </div>
+    </span>
+</div>

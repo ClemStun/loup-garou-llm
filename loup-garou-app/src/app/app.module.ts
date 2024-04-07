@@ -22,6 +22,8 @@ import { RolePopupComponent } from './components/shared/role-popup/role-popup.co
 import { JeuAnnonceComponent } from './components/shared/jeu-annonce/jeu-annonce.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
+import { InputNumberComponent } from './components/shared/input-number/input-number.component';
+import { HttpClientModule } from '@angular/common/http';
 import { BulleAvatarComponent } from './components/shared/bulle-avatar/bulle-avatar.component';
 
 @NgModule({
@@ -45,12 +47,14 @@ import { BulleAvatarComponent } from './components/shared/bulle-avatar/bulle-ava
     BulleChatComponent,
     RolePopupComponent,
     JeuAnnonceComponent,
+    InputNumberComponent,
     BulleAvatarComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
