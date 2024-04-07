@@ -1,1 +1,4 @@
-<p>jeu-annonce works!</p>
+<div class="flex h-full w-full items-center justify-center bg-dark-bg bg-opacity-90 absolute top-0 left-0"
+[ngClass]="{'hidden': !popupVisible, 'inline': popupVisible}">
+    <h1 [innerHTML]="message" class="font-horror text-10xl text-primary "></h1>
+</div>

@@ -1,0 +1,35 @@
+.placeholder-gray-500::placeholder {
+    color: rgba(107, 114, 128, 1);
+}
+
+.bg-primary-300:hover {
+    background-color: #A90429;
+}
+
+.bg-primary-500:active {
+    background-color: #890429;
+}
+
+.opacity-300:hover {
+    opacity: 0.6;
+}
+
+.opacity-500:active {
+    opacity: 0.4;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-inline {
+    display:flex;
+}
+
+.color-white-300:hover{
+    color:#BBBBBB;
+}
+
+.color-white-500:active{
+    color:#999999;
+}

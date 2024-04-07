@@ -22,6 +22,7 @@ import { RolePopupComponent } from './components/shared/role-popup/role-popup.co
 import { JeuAnnonceComponent } from './components/shared/jeu-annonce/jeu-annonce.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
+import { BulleAvatarComponent } from './components/shared/bulle-avatar/bulle-avatar.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AppRoutingModule } from './app-routing.module';
     CarteChatComponent,
     BulleChatComponent,
     RolePopupComponent,
-    JeuAnnonceComponent
+    JeuAnnonceComponent,
+    BulleAvatarComponent
   ],
   imports: [
     BrowserModule,
