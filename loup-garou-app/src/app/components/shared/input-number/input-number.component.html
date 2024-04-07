@@ -2,7 +2,7 @@
     <div *ngIf="value > 0 || label != ''" class="flex rounded-full w-24 h-8 border-2 border-primary">
         <button *ngIf="label == ''" class="rounded-s-full bg-primary text-dark-1 text-center font-bold text-3xl"
             (click)="reduceValue()">
-            -
+            <fa-icon [icon]="faMinus" class="fa-2xs px-1"></fa-icon>
         </button>
         <input
             type="text"
@@ -10,16 +10,16 @@
             [value]="label == '' ? value : label"
             [disabled]="label != ''"
         />
-        <button *ngIf="label == ''" class="rounded-e-full bg-primary text-dark-1 text-center font-bold text-3xl"
+        <button *ngIf="label == ''" class="rounded-e-full w-5 bg-primary text-dark-1 text-center font-bold text-3xl"
             (click)="addValue()">
-            +
+            <fa-icon [icon]="faAdd" class="fa-2xs px-1"></fa-icon>
         </button>
     </div>
     
     <div *ngIf="value == 0 && label == ''" class="h-8">
-        <button class="rounded-full w-9 p-0 m-0 bg-primary text-dark-1 text-center font-bold text-3xl"
+        <button class="rounded-full p-0 m-0 bg-primary text-dark-1 text-center font-bold text-3xl"
             (click)="addValue()">
-            +
+            <fa-icon [icon]="faAdd" class="fa-sm px-2"></fa-icon>
         </button>
     </div>
 </div>

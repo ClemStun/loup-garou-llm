@@ -3,4 +3,7 @@
     <div class="grid gap-x-7 gap-y-12 justify-items-end" [ngClass]="{'grid-cols-3': !moreColumns, 'grid-cols-5': moreColumns}">
         <app-carte-role *ngFor="let role of roles" [role]="role"></app-carte-role>
     </div>
+    <div *ngIf="roles.length == 0" class="text-white opacity-35">
+        <span>Aucun rôle</span>
+    </div>
 </div>

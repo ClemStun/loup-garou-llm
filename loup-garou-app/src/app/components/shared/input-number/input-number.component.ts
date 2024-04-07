@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { faAdd, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-input-number',
@@ -11,6 +12,9 @@ export class InputNumberComponent {
   @Input() value!: number;
 
   @Output() valueEmitter: EventEmitter<number> = new EventEmitter<number>();
+
+  faMinus = faMinus;
+  faAdd = faAdd;
 
   constructor() { }
 
