@@ -24,6 +24,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { InputNumberComponent } from './components/shared/input-number/input-number.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BulleAvatarComponent } from './components/shared/bulle-avatar/bulle-avatar.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     BulleChatComponent,
     RolePopupComponent,
     JeuAnnonceComponent,
-    InputNumberComponent
+    InputNumberComponent,
+    BulleAvatarComponent
   ],
   imports: [
     BrowserModule,

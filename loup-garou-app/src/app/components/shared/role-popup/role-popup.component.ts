@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./role-popup.component.scss']
 })
 export class RolePopupComponent {
-
+  role = "Loup-Garou";
+  imgSrc = "../../../../assets/images/loup-garou.png";
 }
