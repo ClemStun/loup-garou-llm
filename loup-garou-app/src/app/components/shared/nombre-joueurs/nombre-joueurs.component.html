@@ -1,1 +1,35 @@
-<p>nombre-joueurs works!</p>
+
+<div class="flex justify-center mb-9    ">
+    <h1 class="text-xl">nombre de joueur</h1>
+</div>
+
+<div class="flex items-center justify-center">
+    <div class="bg-primary border-primary border-2 rounded-full w-9/12 h-20 flex items-center justify-evenly">
+            <div (click)="moins()" class="text-4xl text-dark-1 cursor-pointer">
+                <fa-icon [icon]="minus" class="fa-xs"></fa-icon>
+            </div>
+            <div class="h-full w-10/12 bg-dark-1 flex items-center overflow-hidden">
+                <div id="joueurs" class=" w-full flex items-center gap-9 justify-center text-white text-3xl element">
+                    <div *ngIf="nbjoueurs[2] > 4 && nbjoueurs[2] < 16" class="flex">
+                        <div class="w-6 mr-8">
+                            <p [ngClass]="{'opacity-45': nbjoueurs[0] !== selectedChiffre, 'opacity-0': nbjoueurs[0] < 5 || nbjoueurs[0] > 15}"> {{ nbjoueurs[0] }} </p>
+                        </div>
+                        <div class="w-6 mr-8">
+                            <p [ngClass]="{'opacity-45': nbjoueurs[1] !== selectedChiffre, 'opacity-0': nbjoueurs[1] < 5 || nbjoueurs[1] > 15}"> {{ nbjoueurs[1] }} </p>
+                        </div>
+                        <p [ngClass]="{'opacity-45': nbjoueurs[2] !== selectedChiffre, 'opacity-0': nbjoueurs[2] < 5 || nbjoueurs[2] > 15}"> {{ nbjoueurs[2] }} </p>
+                        <div class="w-6 ml-8">
+                            <p [ngClass]="{'opacity-45': nbjoueurs[3] !== selectedChiffre, 'opacity-0': nbjoueurs[3] < 5 || nbjoueurs[3] > 15}"> {{ nbjoueurs[3] }} </p>
+                        </div>
+                        <div class="w-6 ml-8">
+                            <p [ngClass]="{'opacity-45': nbjoueurs[4] !== selectedChiffre, 'opacity-0': nbjoueurs[4] < 5 || nbjoueurs[4] > 15}"> {{ nbjoueurs[4] }} </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div (click)="plus()" class="text-4xl text-dark-1 cursor-pointer">
+                <fa-icon [icon]="add" class="fa-xs"></fa-icon>
+            </div>
+    </div>
+</div>
