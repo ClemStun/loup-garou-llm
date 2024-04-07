@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class RolePopupComponent {
   role = "Loup-Garou";
   imgSrc = "../../../../assets/images/loup-garou.png";
+  description = "Durant la nuit les Loups-Garous se réunissent pour voter qui va être éliminé. Pendant la journée il ne doit pas être démasqué.";
+
 }

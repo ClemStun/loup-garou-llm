@@ -1,1 +1,10 @@
-<p>feu-de-camp works!</p>
+<div class="circle-container flex justify-center items-center">
+    <div>
+        <img src="" alt="">
+    </div>
+    <div class="circle-container flex justify-center items-center">
+        <div *ngFor="let player of players; let i = index" class="player bg-blue-500 text-white" [style.transform]="'rotate(' + calculateRotation(i) + 'deg) translate(0, -250px)'">
+            <app-carte-role [role]="" [label]=""></app-carte-role>
+        </div>
+    </div>
+</div>
