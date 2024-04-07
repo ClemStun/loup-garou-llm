@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ROLES, ROLES_LIST } from 'src/app/constants/roles.constants';
+import { JoueurService } from 'src/app/services/joueur.service';
 import { RolesService } from 'src/app/services/roles.service';
 
 @Component({
@@ -8,10 +9,15 @@ import { RolesService } from 'src/app/services/roles.service';
   styleUrls: ['./nouvelle-partie.component.scss']
 })
 export class NouvellePartieComponent implements OnInit {
-  pseudo = "Louis";
+  pseudo!: string;
   imgSrc = "../../../../assets/images/bg.png";
 
-  constructor(private rolesService: RolesService) { }
+  constructor(private rolesService: RolesService, private joueurService: JoueurService) {
+    this.joueurService.joueur$.subscribe(joueur => {
+      this.pseudo = joueur.pseudo;
+      this.imgSrc = joueur.imgSrc;
+    });
+  }
 
   ngOnInit(): void {
     this.rolesService.resetArrays();

@@ -10,27 +10,26 @@
             </div>
             <div class="flex flex-col w-3/5 h-full gap-4 justify-center">
                 <h3 class="font-semibold text-3xl ps-5">Pseudo</h3>
-                <input type="text" class="block h-1/2 w-full rounded-3xl bg-dark-bg ps-5 text-2xl placeholder-gray-500"
+                <input id="pseudo" type="text" class="block h-1/2 w-full rounded-3xl bg-dark-bg ps-5 text-2xl placeholder-gray-500"
                     placeholder="Entrez votre pseudo">
             </div>
         </div>
-        <button class="h-24 w-1/6 bg-primary rounded-full text-2xl bg-primary-300 bg-primary-500">Créer une
+        <button class="h-24 w-1/6 bg-primary rounded-full text-2xl bg-primary-300 bg-primary-500" (click)="creerPartie()">Créer une
             partie</button>
     </div>
 
     <div class="flex flex-col w-3/5 h-4/5 items-center bg-dark-bg absolute rounded-3xl opacity-95 p-3"
         [ngClass]="{'display-none': !popup, 'display-inline': popup}">
         <div class="flex place-content-end w-full pr-6">
-            <fa-icon [icon]="faXmark" class="fa-4x cursor-pointer color-white-300 color-white-500"
+            <fa-icon [icon]="faXmark" class="fa-2x cursor-pointer color-white-300 color-white-500"
                 (click)="popup = false"></fa-icon>
         </div>
         <div class="flex flex-col items-center gap-20 h-5/6">
-            <h1 class="p-10 h-1/6 text-6xl"> Choisissez une icône</h1>
+            <h1 class="pb-10 h-1/6 font-bold text-3xl">Choisissez une icône</h1>
             <div class="grid h-2/3 grid-rows-2 grid-cols-5 gap-8 place-items-center place-content-center">
-                <app-bulle-avatar *ngFor="let avatar of listAvatar" [avatar]="avatar"></app-bulle-avatar>
+                <app-bulle-avatar *ngFor="let avatar of listAvatar" [avatar]="avatar" (click)="selectedAvatar(avatar); popup = false"></app-bulle-avatar>
             </div>
         </div>
-
 
     </div>
 </div>

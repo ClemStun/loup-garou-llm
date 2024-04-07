@@ -1,5 +1,5 @@
 <div class="w-full flex justify-center">
-    <div *ngIf="(value > 0 || label != '') && isEditable" class="flex rounded-full w-24 h-8 border-2 border-primary">
+    <div *ngIf="value > 0 || label != '' || isEditable" class="flex rounded-full w-24 h-8 border-2 border-primary">
         <button *ngIf="label == ''" class="rounded-s-full bg-primary text-dark-1 text-center font-bold text-3xl"
             (click)="reduceValue()">
             <fa-icon [icon]="faMinus" class="fa-2xs px-1"></fa-icon>

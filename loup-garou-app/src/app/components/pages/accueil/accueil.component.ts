@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { faCancel, faCross, faHome, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { ActivatedRoute, Router } from '@angular/router';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { Joueur } from 'src/app/models/joueur.model';
+import { JoueurService } from 'src/app/services/joueur.service';
 
 @Component({
   selector: 'app-accueil',
@@ -10,6 +13,7 @@ export class AccueilComponent {
   faXmark = faXmark;
   imgSrc = "../../../../assets/images/bg.png";
   popup = false;
+  joueur!: Joueur;
   listAvatar = [
     "../../../../assets/images/perso1.png",
     "../../../../assets/images/perso2.png",
@@ -20,6 +24,19 @@ export class AccueilComponent {
     "../../../../assets/images/perso7.png",
     "../../../../assets/images/perso8.png",
     "../../../../assets/images/perso9.png",
-  ]
+  ];
+
+  constructor(private joueurService: JoueurService, private route: Router) { }
+
+  selectedAvatar(avatar: string) {
+    this.imgSrc = avatar;
+  }
+
+  creerPartie() {
+    const pseudo = document.getElementById('pseudo') as HTMLInputElement;
+    this.joueurService.updateJoueur(new Joueur(pseudo.value, this.imgSrc, ''));
+    console.log(pseudo.value, this.imgSrc);
+    this.route.navigateByUrl("/new-game", { skipLocationChange: true });
+  }
 
 }
