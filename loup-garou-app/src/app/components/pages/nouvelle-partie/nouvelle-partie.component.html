@@ -1,6 +1,6 @@
 <div class="flex w-full h-full items-center justify-center gap-24 px-36 py-28">
     <div class="w-2/3 h-full max-h-full overflow-auto bg-dark-1 rounded-16 flex flex-col gap-14 py-14">
-        <app-nombre-joueurs></app-nombre-joueurs>
+        <app-nombre-joueurs (nombreJoueurEmitter)="getNombreJoueurs($event)"></app-nombre-joueurs>
         <app-liste-roles [title]="'Rôles sélectionnés'" [moreColumns]="true" [isSelectedRoles]="true"></app-liste-roles>
         <app-liste-roles [title]="'Rôles jouables'" [moreColumns]="true" [isNonSelectedRoles]="true"></app-liste-roles>
     </div>

@@ -17,6 +17,10 @@ export class CarteRoleComponent {
 
   @Input() isEditable = true;
 
+  @Input() rotation = 0;
+
+  @Input() hasInfo = true;
+
   value!: number;
   faCircleInfo = faCircleInfo;
 

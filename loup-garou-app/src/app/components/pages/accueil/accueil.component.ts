@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Joueur } from 'src/app/models/joueur.model';
+import { Role } from 'src/app/models/role.model';
 import { JoueurService } from 'src/app/services/joueur.service';
 
 @Component({
@@ -34,7 +35,7 @@ export class AccueilComponent {
 
   creerPartie() {
     const pseudo = document.getElementById('pseudo') as HTMLInputElement;
-    this.joueurService.updateJoueur(new Joueur(pseudo.value, this.imgSrc, ''));
+    this.joueurService.updateJoueur(new Joueur(pseudo.value, this.imgSrc, new Role('', '', 0)));
     this.route.navigateByUrl("/new-game", { skipLocationChange: true });
   }
 

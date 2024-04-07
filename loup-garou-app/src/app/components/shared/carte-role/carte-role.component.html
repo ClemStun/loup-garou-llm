@@ -1,5 +1,5 @@
-<div class="w-32 relative">
-    <fa-icon [icon]="faCircleInfo" class="fa-xl absolute"></fa-icon>
+<div class="w-32 relative" [style.transform]="'rotate(' + rotation + 'deg)'">
+    <fa-icon *ngIf="hasInfo" [icon]="faCircleInfo" class="fa-xl absolute"></fa-icon>
     <div class="w-32 h-32 overflow-hidden rounded-full border-2 border-primary">
         <img [src]="role.imgSrc" alt="role.name">
     </div>

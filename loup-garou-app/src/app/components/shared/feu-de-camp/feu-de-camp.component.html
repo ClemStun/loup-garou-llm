@@ -1,10 +1,10 @@
 <div class="circle-container flex justify-center items-center">
-    <div>
-        <img src="" alt="">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-52 h-52">
+        <img src="../../../../assets/images/feu-de-camp.gif" class="w-52 h-52" alt="firecamp">
     </div>
     <div class="circle-container flex justify-center items-center">
-        <div *ngFor="let player of players; let i = index" class="player bg-blue-500 text-white" [style.transform]="'rotate(' + calculateRotation(i) + 'deg) translate(0, -250px)'">
-            <app-carte-role [role]="" [label]=""></app-carte-role>
+        <div *ngFor="let joueur of joueurs; let i = index" class="player bg-transparent text-white" [style.transform]="'rotate(' + calculateRotation(i) + 'deg) translate(0, -200px)'">
+            <app-carte-role [hasInfo]="false" [role]="getInfosUser(joueur, true)" [label]="getInfosUser(joueur, false)" [rotation]="-calculateRotation(i)"></app-carte-role>
         </div>
     </div>
 </div>

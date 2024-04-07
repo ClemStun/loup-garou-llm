@@ -11,6 +11,7 @@ import { RolesService } from 'src/app/services/roles.service';
 export class NouvellePartieComponent implements OnInit {
   pseudo!: string;
   imgSrc = "../../../../assets/images/bg.png";
+  nombreJoueurs!: number;
 
   constructor(private rolesService: RolesService, private joueurService: JoueurService) {
     this.joueurService.joueur$.subscribe(joueur => {
@@ -21,6 +22,10 @@ export class NouvellePartieComponent implements OnInit {
 
   ngOnInit(): void {
     this.rolesService.resetArrays();
+  }
+
+  getNombreJoueurs(event: any) {
+    this.nombreJoueurs = event;
   }
     
 }

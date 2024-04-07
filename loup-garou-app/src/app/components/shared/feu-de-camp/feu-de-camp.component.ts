@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ROLES } from 'src/app/constants/roles.constants';
+import { Joueur } from 'src/app/models/joueur.model';
+import { Role } from 'src/app/models/role.model';
 
 @Component({
   selector: 'app-feu-de-camp',
@@ -6,13 +9,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./feu-de-camp.component.scss']
 })
 export class FeuDeCampComponent {
-  players = ['Player 1', 'Player 2', 'Player 3', 'Player 4', 'Player 5', 'Player 5', 'Player 5', 'Player 5']; // Vous pouvez remplacer cela par votre propre liste de joueurs
+  joueurs: Joueur[] = [
+    new Joueur('Joueur 1', '../../../assets/images/villageois.png', ROLES.VILLAGEOIS),
+    new Joueur('Joueur 1', '../../../assets/images/villageois.png', ROLES.VILLAGEOIS),
+    new Joueur('Joueur 1', '../../../assets/images/villageois.png', ROLES.VILLAGEOIS),
+    new Joueur('Joueur 1', '../../../assets/images/villageois.png', ROLES.VILLAGEOIS),
+    new Joueur('Joueur 1', '../../../assets/images/villageois.png', ROLES.VILLAGEOIS),
+    new Joueur('Joueur 1', '../../../assets/images/villageois.png', ROLES.VILLAGEOIS),
+    new Joueur('Joueur 1', '../../../assets/images/villageois.png', ROLES.VILLAGEOIS),
+    new Joueur('Joueur 1', '../../../assets/images/villageois.png', ROLES.VILLAGEOIS),
+    new Joueur('Joueur 1', '../../../assets/images/villageois.png', ROLES.VILLAGEOIS),
+  ]
 
   calculateRotation(index: number): number {
-    const totalPlayers = this.players.length;
+    const totalPlayers = this.joueurs.length;
     const degreesPerPlayer = 360 / totalPlayers;
     return index * degreesPerPlayer;
   }
 
-  getInfosUser(player:)
+  getInfosUser(joueur: Joueur, isImg: boolean): any {
+    return isImg ? new Role('', joueur.imgSrc, 0) : joueur.pseudo;
+  }
 }
