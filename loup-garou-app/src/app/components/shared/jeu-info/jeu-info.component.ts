@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faComment, faInfo, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { ROLES } from 'src/app/constants/roles.constants';
 
 @Component({
@@ -9,6 +9,7 @@ import { ROLES } from 'src/app/constants/roles.constants';
 })
 export class JeuInfoComponent {
   @Input() isDay = true;
+  @Input() isInfo = true;
 
   currentRole = ROLES.VILLAGEOIS;
 
@@ -20,6 +21,9 @@ export class JeuInfoComponent {
   seconds = 0;
   numeroJour = 1;
   timerString = '00:00';
+
+  faInfo = faInfo;
+  faComment = faComment;
 
   constructor() { }
 

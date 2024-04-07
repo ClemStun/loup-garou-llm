@@ -1,1 +1,15 @@
-<p>chat-history works!</p>
+<div *ngFor="let message of messages" class="w-full px-4 py-6 rounded-xl bg-dark-bg flex justify-center items-center gap-3">
+    <div class="w-16 h-16 overflow-hidden">
+        <img [src]="message.imgSrc" alt="PP" class="rounded-full object-cover">
+    </div>
+    <div class="flex flex-col gap-4">
+        <div class="flex gap-6">
+            <h4 class="font-semibold">{{ message.pseudo }}</h4>
+            <div class="flex text-2xs gap-1 opacity-30">
+                <span>{{ message.timer }}</span>
+                <fa-icon [icon]="message.wasDay ? faSun : faMoon"></fa-icon>
+            </div>
+        </div>
+        <p class="text-sm">{{ message.message }}</p>
+    </div>
+</div>
