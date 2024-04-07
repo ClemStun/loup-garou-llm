@@ -25,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { InputNumberComponent } from './components/shared/input-number/input-number.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BulleAvatarComponent } from './components/shared/bulle-avatar/bulle-avatar.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { BulleAvatarComponent } from './components/shared/bulle-avatar/bulle-ava
     BrowserModule,
     FontAwesomeModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

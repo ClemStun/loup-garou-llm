@@ -12,6 +12,8 @@ export class NouvellePartieComponent implements OnInit {
   pseudo!: string;
   imgSrc = "../../../../assets/images/bg.png";
   nombreJoueurs!: number;
+  roleActif = true;
+  modeActif = true;
 
   constructor(private rolesService: RolesService, private joueurService: JoueurService) {
     this.joueurService.joueur$.subscribe(joueur => {
@@ -26,6 +28,14 @@ export class NouvellePartieComponent implements OnInit {
 
   getNombreJoueurs(event: any) {
     this.nombreJoueurs = event;
+  }
+
+  switchmode(){
+    this.modeActif = !this.modeActif;
+  }
+
+  switchrole(){
+    this.roleActif = !this.roleActif;
   }
     
 }
