@@ -10,11 +10,21 @@ import { RolesService } from 'src/app/services/roles.service';
 export class NouvellePartieComponent implements OnInit {
   pseudo = "Louis";
   imgSrc = "../../../../assets/images/bg.png";
+  roleActif = true;
+  modeActif = true;
 
   constructor(private rolesService: RolesService) { }
 
   ngOnInit(): void {
     this.rolesService.resetArrays();
+  }
+
+  switchmode(){
+    this.modeActif = !this.modeActif;
+  }
+
+  switchrole(){
+    this.roleActif = !this.roleActif;
   }
     
 }

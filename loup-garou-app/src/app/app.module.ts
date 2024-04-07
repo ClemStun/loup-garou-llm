@@ -23,6 +23,7 @@ import { JeuAnnonceComponent } from './components/shared/jeu-annonce/jeu-annonce
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { InputNumberComponent } from './components/shared/input-number/input-number.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { InputNumberComponent } from './components/shared/input-number/input-num
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
