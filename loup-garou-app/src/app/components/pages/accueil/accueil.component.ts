@@ -11,7 +11,7 @@ import { JoueurService } from 'src/app/services/joueur.service';
 })
 export class AccueilComponent {
   faXmark = faXmark;
-  imgSrc = "../../../../assets/images/bg.png";
+  imgSrc = "../../../../assets/images/photo-placeholder.png";
   popup = false;
   joueur!: Joueur;
   listAvatar = [
@@ -35,7 +35,6 @@ export class AccueilComponent {
   creerPartie() {
     const pseudo = document.getElementById('pseudo') as HTMLInputElement;
     this.joueurService.updateJoueur(new Joueur(pseudo.value, this.imgSrc, ''));
-    console.log(pseudo.value, this.imgSrc);
     this.route.navigateByUrl("/new-game", { skipLocationChange: true });
   }
 

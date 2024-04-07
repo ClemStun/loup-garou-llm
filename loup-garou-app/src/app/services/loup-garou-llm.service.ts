@@ -26,7 +26,6 @@ export class LoupGarouLlmService {
   postMsg(data: any): Observable<any> {
     // Construct the complete URL for the endpoint
     const url: string = `${this.apiUrl}/your_endpoint`;
-    console.log("check this out");
     
     // Make the HTTP POST request and return the Observable
     return this.http.post(url, data);

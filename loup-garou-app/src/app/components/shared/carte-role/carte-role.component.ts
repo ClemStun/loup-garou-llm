@@ -23,7 +23,6 @@ export class CarteRoleComponent {
   constructor(private rolesService: RolesService) { }
 
   ngOnInit(): void {
-    console.log(this.role);
     this.value = this.role.quantity;
   }
 
