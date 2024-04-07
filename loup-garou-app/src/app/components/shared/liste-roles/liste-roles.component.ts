@@ -18,6 +18,8 @@ export class ListeRolesComponent {
 
   @Input() title = '';
 
+  @Input() isEditable = true;
+
   constructor(private rolesService: RolesService) { }
 
   ngOnInit(): void {

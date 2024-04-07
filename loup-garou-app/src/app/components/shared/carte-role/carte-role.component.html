@@ -3,5 +3,5 @@
     <div class="w-32 h-32 overflow-hidden rounded-full border-2 border-primary">
         <img [src]="role.imgSrc" alt="role.name">
     </div>
-    <app-input-number [value]="value" [label]="label" [isAlternative]="isAlternative" (valueEmitter)="getValue($event)" class="absolute"></app-input-number>
+    <app-input-number [value]="value" [label]="label" [isAlternative]="isAlternative" [isEditable]="isEditable" (valueEmitter)="getValue($event)" class="absolute"></app-input-number>
 </div>

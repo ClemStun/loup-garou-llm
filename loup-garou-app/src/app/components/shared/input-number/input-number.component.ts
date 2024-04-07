@@ -10,6 +10,7 @@ export class InputNumberComponent {
   @Input() label = '';
   @Input() isAlternative = false;
   @Input() value!: number;
+  @Input() isEditable = true;
 
   @Output() valueEmitter: EventEmitter<number> = new EventEmitter<number>();
 
