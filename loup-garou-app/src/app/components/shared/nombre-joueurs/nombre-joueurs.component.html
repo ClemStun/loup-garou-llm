@@ -9,17 +9,17 @@
                 <div id="joueurs" class=" w-full flex items-center gap-9 justify-center text-white text-3xl element">
                     <div *ngIf="nbjoueurs[2] > 4 && nbjoueurs[2] < 16" class="flex">
                         <div class="w-6 mr-8">
-                            <p [ngClass]="{'opacity-45': nbjoueurs[0] !== selectedChiffre, 'opacity-0': nbjoueurs[0] < 5 || nbjoueurs[0] > 15}"> {{ nbjoueurs[0] }} </p>
+                            <p [ngClass]="{'opacity-45': nbjoueurs[0] >= 5 && nbjoueurs[0] <= 15 && nbjoueurs[0] !== selectedChiffre, 'opacity-0': nbjoueurs[0] < 5}"> {{ nbjoueurs[0] }} </p>
                         </div>
                         <div class="w-6 mr-8">
-                            <p [ngClass]="{'opacity-45': nbjoueurs[1] !== selectedChiffre, 'opacity-0': nbjoueurs[1] < 5 || nbjoueurs[1] > 15}"> {{ nbjoueurs[1] }} </p>
+                            <p [ngClass]="{'opacity-45': nbjoueurs[0] >= 5 && nbjoueurs[0] <= 15 && nbjoueurs[1] !== selectedChiffre, 'opacity-0': nbjoueurs[1] < 5}"> {{ nbjoueurs[1] }} </p>
                         </div>
-                        <p [ngClass]="{'opacity-45': nbjoueurs[2] !== selectedChiffre, 'opacity-0': nbjoueurs[2] < 5 || nbjoueurs[2] > 15}"> {{ nbjoueurs[2] }} </p>
+                        <p class="font-bold" [ngClass]="{'opacity-45': nbjoueurs[2] !== selectedChiffre, 'opacity-0': nbjoueurs[2] < 5 || nbjoueurs[2] > 15}"> {{ nbjoueurs[2] }} </p>
                         <div class="w-6 ml-8">
-                            <p [ngClass]="{'opacity-45': nbjoueurs[3] !== selectedChiffre, 'opacity-0': nbjoueurs[3] < 5 || nbjoueurs[3] > 15}"> {{ nbjoueurs[3] }} </p>
+                            <p [ngClass]="{'opacity-45': nbjoueurs[0] >= 5 && nbjoueurs[0] <= 15 && nbjoueurs[3] !== selectedChiffre, 'opacity-0': nbjoueurs[3] > 15}"> {{ nbjoueurs[3] }} </p>
                         </div>
                         <div class="w-6 ml-8">
-                            <p [ngClass]="{'opacity-45': nbjoueurs[4] !== selectedChiffre, 'opacity-0': nbjoueurs[4] < 5 || nbjoueurs[4] > 15}"> {{ nbjoueurs[4] }} </p>
+                            <p [ngClass]="{'opacity-45': nbjoueurs[0] >= 5 && nbjoueurs[0] <= 15 && nbjoueurs[4] !== selectedChiffre, 'opacity-0': nbjoueurs[4] > 15}"> {{ nbjoueurs[4] }} </p>
                         </div>
                     </div>
                     

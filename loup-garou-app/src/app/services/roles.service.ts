@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Role } from '../models/role.model';
 import { ROLES_LIST } from '../constants/roles.constants';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class RolesService {
   private selectedRolesArray: BehaviorSubject<Role[]> = new BehaviorSubject<Role[]>([]);
   selectedRolesArray$ = this.selectedRolesArray.asObservable();
 
-  constructor() { }
+  constructor(private cookieService: CookieService) { }
 
   resetArrays() {
     this.rolesArray.next(ROLES_LIST);
@@ -22,6 +23,7 @@ export class RolesService {
 
   addRolesArray(value: Role) {
     this.rolesArray.next([...this.rolesArray.value, value]);
+    this.cookieService.set('roles', JSON.stringify(this.selectedRolesArray.value));
   }
 
   reduceRolesArray(value: Role) {
@@ -31,10 +33,12 @@ export class RolesService {
       roles.splice(index, 1);
       this.rolesArray.next(roles);
     }
+    this.cookieService.set('roles', JSON.stringify(this.selectedRolesArray.value));
   }
 
   addSelectedRolesArray(value: any) {
     this.selectedRolesArray.next([...this.selectedRolesArray.value, value]);
+    this.cookieService.set('roles', JSON.stringify(this.selectedRolesArray.value));
   }
 
   reduceSelectedRolesArray(value: any) {
@@ -44,5 +48,6 @@ export class RolesService {
       roles.splice(index, 1);
       this.selectedRolesArray.next(roles);
     }
+    this.cookieService.set('roles', JSON.stringify(this.selectedRolesArray.value));
   }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Role } from 'src/app/models/role.model';
 
 @Component({
   selector: 'app-role-popup',
@@ -6,8 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./role-popup.component.scss']
 })
 export class RolePopupComponent {
-  role = "Loup-Garou";
-  imgSrc = "../../../../assets/images/loup-garou.png";
-  description = "Durant la nuit les Loups-Garous se réunissent pour voter qui va être éliminé. Pendant la journée il ne doit pas être démasqué.";
-
+  @Input() role!: Role;
 }

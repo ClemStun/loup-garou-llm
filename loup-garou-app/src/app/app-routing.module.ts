@@ -7,7 +7,7 @@ import { EcranJeuComponent } from './components/pages/ecran-jeu/ecran-jeu.compon
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'new-game', component: NouvellePartieComponent },
-  { path: 'in-game', component: EcranJeuComponent },
+  { path: 'in-game/:mode', component: EcranJeuComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full'},
   { path: '**', redirectTo: '/accueil'},
 ];

@@ -1,5 +1,5 @@
 <div class="flex w-full h-full">
-    <div *ngIf="isInfo" class="flex flex-col gap-8 justify-center items-center w-full h-full">
+    <div *ngIf="isInfo && !isBotOnly" class="flex flex-col gap-8 justify-center items-center w-full h-full">
         <div class="flex w-2/3 justify-between">
             <app-carte-role [role]="currentRole" [isAlternative]="true" [label]="'Votre rôle'"></app-carte-role>
             <div class="flex flex-col gap-4 w-32">
@@ -15,8 +15,8 @@
         <hr />
         <app-liste-roles [isSelectedRoles]="true" [title]="'Rôles restants'" [isEditable]="false"></app-liste-roles>
     </div>
-    <div *ngIf="!isInfo" class="flex flex-col gap-8 justify-center items-center w-full h-full">
-        <div class="flex gap-4 w-full h-1/6 px-16 my-8">
+    <div *ngIf="!isInfo || isBotOnly" class="flex flex-col gap-8 justify-center items-center w-full h-full">
+        <div class="flex gap-4 w-full px-16 my-8">
             <div class="rounded-full bg-dark-bg text-white w-full text-center py-4 px-6">
                 <span class="font-semibold text-lg">Jour {{ numeroJour }}</span>
             </div>
@@ -29,7 +29,7 @@
             <app-chat-history></app-chat-history>
         </div>
     </div>
-    <div class="flex flex-col h-full w-12">
+    <div *ngIf="!isBotOnly" class="flex flex-col h-full w-12">
         <div class="h-1/2 w-full flex justify-center items-center cursor-pointer" [ngClass]="{'bg-dark-bg': !isInfo}" (click)="isInfo = true">
             <fa-icon class="opacity-50" [icon]="faInfo"></fa-icon>
         </div>

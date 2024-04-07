@@ -10,6 +10,7 @@ import { ROLES } from 'src/app/constants/roles.constants';
 export class JeuInfoComponent {
   @Input() isDay = true;
   @Input() isInfo = true;
+  @Input() isBotOnly = true;
 
   currentRole = ROLES.VILLAGEOIS;
 

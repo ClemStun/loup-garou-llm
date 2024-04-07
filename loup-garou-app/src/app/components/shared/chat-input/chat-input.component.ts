@@ -11,7 +11,8 @@ export class ChatInputComponent {
   placeholder = "Ecrire dans le chat...";
   inputValue: string = '';
   send = faPaperPlane;
-  @Input() type = 3;
+  @Input() isBotOnly = true;
+  @Input() texte!: string;
 
   constructor(private service: LoupGarouLlmService ){}
 

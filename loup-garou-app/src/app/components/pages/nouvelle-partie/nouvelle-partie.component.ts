@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ROLES, ROLES_LIST } from 'src/app/constants/roles.constants';
+import { GameService } from 'src/app/services/game.service';
 import { JoueurService } from 'src/app/services/joueur.service';
 import { RolesService } from 'src/app/services/roles.service';
 
@@ -15,7 +17,7 @@ export class NouvellePartieComponent implements OnInit {
   roleActif = true;
   modeActif = true;
 
-  constructor(private rolesService: RolesService, private joueurService: JoueurService) {
+  constructor(private rolesService: RolesService, private joueurService: JoueurService, private gameService: GameService, private route: Router) {
     this.joueurService.joueur$.subscribe(joueur => {
       this.pseudo = joueur.pseudo;
       this.imgSrc = joueur.imgSrc;
@@ -36,6 +38,10 @@ export class NouvellePartieComponent implements OnInit {
 
   switchrole(){
     this.roleActif = !this.roleActif;
+  }
+
+  start() {
+    this.modeActif ? this.route.navigateByUrl(`/in-game/me`, { skipLocationChange: true }) : this.route.navigate([`/in-game/bot`]);
   }
     
 }

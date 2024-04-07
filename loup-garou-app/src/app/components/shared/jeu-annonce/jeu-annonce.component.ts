@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-jeu-annonce',
@@ -13,6 +12,6 @@ export class JeuAnnonceComponent implements OnInit{
   ngOnInit(): void {
     setTimeout(() => {
       this.popupVisible = false;
-    }, 5000);
+    }, 3000);
   }
 }

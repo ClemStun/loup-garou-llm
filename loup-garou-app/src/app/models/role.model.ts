@@ -3,5 +3,6 @@ export class Role {
         public name: string,
         public imgSrc: string,
         public quantity: number,
+        public description?: string,
     ) { }
 }

@@ -9,7 +9,7 @@ import { HttpParams } from '@angular/common/http';
 })
 export class GameService {
 
-  apiUrl = ``;
+  apiUrl = `https://b91a-34-71-149-173.ngrok-free.app/`;
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,10 @@ export class GameService {
     ];
     const params = new HttpParams().set('players', JSON.stringify(pseudos)).set('roles', JSON.stringify({"loup": 2, "villageois": 5}));
     return this.http.get<any>(this.apiUrl, { params });
+  }
+
+  getSwitch(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
   }
 
 }

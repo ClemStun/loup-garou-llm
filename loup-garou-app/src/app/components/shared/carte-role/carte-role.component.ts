@@ -23,6 +23,7 @@ export class CarteRoleComponent {
 
   value!: number;
   faCircleInfo = faCircleInfo;
+  tooltip = false;
 
   constructor(private rolesService: RolesService) { }
 
