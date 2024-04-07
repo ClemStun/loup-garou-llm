@@ -22,6 +22,7 @@ import { RolePopupComponent } from './components/shared/role-popup/role-popup.co
 import { JeuAnnonceComponent } from './components/shared/jeu-annonce/jeu-annonce.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
